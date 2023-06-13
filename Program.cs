@@ -45,10 +45,11 @@ namespace VKDialogHistoryFileMerger
                         var dataId = Regex.Match(messageContent, @"data-id=""(\d+)""").Groups[1].Value;
                         if (uniqueMessages.TryGetValue(dataId, out _)) continue;
                         writer.WriteLine(messageContent);
-                        writer.WriteLine("</div><div class=\"page_content page_block\">");
+                        
 
                         uniqueMessages.Add(dataId, messageContent);
                     }
+                    writer.WriteLine("</div><div class=\"page_content page_block\">");
                 }
 
                 writer.WriteLine("</div></div></body></html>");
