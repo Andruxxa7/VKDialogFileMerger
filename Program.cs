@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
@@ -11,7 +12,10 @@ namespace VKDialogHistoryFileMerger
     {
         private static void Main()
         {
-            var htmlFiles = Directory.GetFiles(".", "*.html");
+            var htmlFiles = Directory.GetFiles(".", "messages*.html")
+                .Where(file => Regex.IsMatch(file, @"messages\d+\.html"))
+                .OrderBy(file => int.Parse(Regex.Match(file, @"messages(\d+)\.html").Groups[1].Value))
+                .ToArray();
             var outputFileName = "MergedDialog.html";
             Array.Sort(htmlFiles);
 
