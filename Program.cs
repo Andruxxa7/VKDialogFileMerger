@@ -17,7 +17,6 @@ namespace VKDialogHistoryFileMerger
                 .OrderBy(file => int.Parse(Regex.Match(file, @"messages(\d+)\.html").Groups[1].Value))
                 .ToArray();
             var outputFileName = "MergedDialog.html";
-            Array.Sort(htmlFiles);
 
             var uniqueMessages = new Dictionary<string, string>();
             var doc = new HtmlDocument();
