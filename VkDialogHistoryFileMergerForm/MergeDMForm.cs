@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static VKDialogHistoryFileMergerService.VkDialogHistoryFileMergerService;
 
 namespace VkDialogHistoryFileMergerForm
 {
@@ -44,6 +45,17 @@ namespace VkDialogHistoryFileMergerForm
         {
             outputPathLabel.Text = "Output path:";
             _outputPath = null;
+        }
+
+        private async void mergeButton_Click(object sender, EventArgs e)
+        {
+            if (!await ExistsDialogFiles(_inputPath))
+            {
+                MessageBox.Show("There are no \'messages\' files in this directory. Change directory and try again.", "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                return;
+            }
+            MergeFiles(_inputPath, _outputPath);
+            MessageBox.Show("Files merged successfully.");
         }
     }
 }

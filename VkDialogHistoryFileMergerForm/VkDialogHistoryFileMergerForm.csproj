@@ -80,5 +80,11 @@
     <ItemGroup>
         <None Include="App.config" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\VKDialogHistoryFileMergerService\VKDialogHistoryFileMergerService.csproj">
+        <Project>{99094f86-7fc5-44f3-a910-539c7a6c4711}</Project>
+        <Name>VKDialogHistoryFileMergerService</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

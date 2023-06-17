@@ -48,6 +48,7 @@
             this.mergeButton.TabIndex = 4;
             this.mergeButton.Text = "Merge";
             this.mergeButton.UseVisualStyleBackColor = true;
+            this.mergeButton.Click += new System.EventHandler(this.mergeButton_Click);
             // 
             // exitButton
             // 
@@ -146,6 +147,7 @@
             this.Controls.Add(this.mergeButton);
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MergeForm";
+            this.Text = "VKDialogHistoryFileMerger";
             this.ResumeLayout(false);
         }
 
