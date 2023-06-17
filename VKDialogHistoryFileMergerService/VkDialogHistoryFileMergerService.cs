@@ -24,9 +24,7 @@ namespace VKDialogHistoryFileMergerService
             var doc = new HtmlDocument();
             doc.LoadHtml(File.ReadAllText(htmlFiles[0], Encoding.GetEncoding(1251)));
             var divNode = doc.DocumentNode.SelectSingleNode("//div[@class='ui_crumb']");
-            var name = divNode?.InnerText;
-            var prePath = outputpath == null ? string.Empty : $"{outputpath}\\";
-            outputFileName =prePath + name + outputFileName;
+            outputFileName =(outputpath == null ? string.Empty : $"{outputpath}\\") + divNode?.InnerText + outputFileName;
             using (var writer = new StreamWriter(outputFileName, false, Encoding.GetEncoding(1251)))
             {
                 
@@ -34,7 +32,7 @@ namespace VKDialogHistoryFileMergerService
                     "<!DOCTYPE html><html><head><meta charset=\"windows-1251\"><title>VK</title><link rel=\"shortcut icon\" href=\"../../favicon.ico\"><link rel=\"stylesheet\" type=\"text/css\" href=\"../../style.css\"></head><body><div class=\"wrap\"><div class=\"header\"><div class=\"page_header\"><div class=\"top_home_logo\"></div></div></div><div class=\"page_content page_block\"><div class=\"wrap_page_content\">");
 
                 writer.WriteLine(
-                    $"<div class=\"page_block_header clear_fix\"><div class=\"page_block_header_inner _header_inner\"><div class=\"ui_crumb\">{name}</div></div></div>");
+                    $"<div class=\"page_block_header clear_fix\"><div class=\"page_block_header_inner _header_inner\"><div class=\"ui_crumb\">{divNode?.InnerText}</div></div></div>");
 
                 foreach (var htmlFile in htmlFiles)
                 {
