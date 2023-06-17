@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using HtmlAgilityPack;
 
 namespace VKDialogHistoryFileMergerService
@@ -59,5 +60,8 @@ namespace VKDialogHistoryFileMergerService
 
             Console.WriteLine("Dialog files merged successfully!\nOutput file: " + outputFileName);
         }
+
+        public static Task<bool> ExistsDialogFiles(string path) => Task.FromResult(Directory
+            .GetFiles(path, "messages*.html").Any(file => Regex.IsMatch(file, @"messages\d+\.html")));
     }
 }
