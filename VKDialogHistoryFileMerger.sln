@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogHistoryFileMerger",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogHistoryFileMergerService", "VKDialogHistoryFileMergerService\VKDialogHistoryFileMergerService.csproj", "{99094F86-7FC5-44F3-A910-539C7A6C4711}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkDialogHistoryFileMergerForm", "VkDialogHistoryFileMergerForm\VkDialogHistoryFileMergerForm.csproj", "{75CCBF20-7678-427F-AE15-98F9221160B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{99094F86-7FC5-44F3-A910-539C7A6C4711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99094F86-7FC5-44F3-A910-539C7A6C4711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99094F86-7FC5-44F3-A910-539C7A6C4711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CCBF20-7678-427F-AE15-98F9221160B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CCBF20-7678-427F-AE15-98F9221160B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CCBF20-7678-427F-AE15-98F9221160B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CCBF20-7678-427F-AE15-98F9221160B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
