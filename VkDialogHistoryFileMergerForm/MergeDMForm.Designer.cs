@@ -42,7 +42,7 @@
             // mergeButton
             // 
             this.mergeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mergeButton.Location = new System.Drawing.Point(629, 380);
+            this.mergeButton.Location = new System.Drawing.Point(628, 396);
             this.mergeButton.Name = "mergeButton";
             this.mergeButton.Size = new System.Drawing.Size(160, 42);
             this.mergeButton.TabIndex = 4;
@@ -54,7 +54,7 @@
             // 
             this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.Location = new System.Drawing.Point(463, 380);
+            this.exitButton.Location = new System.Drawing.Point(462, 396);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(160, 42);
             this.exitButton.TabIndex = 5;
@@ -67,7 +67,7 @@
             this.inputPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPathLabel.AutoEllipsis = true;
             this.inputPathLabel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.inputPathLabel.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Italic);
+            this.inputPathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
             this.inputPathLabel.Location = new System.Drawing.Point(220, 45);
             this.inputPathLabel.Name = "inputPathLabel";
             this.inputPathLabel.Size = new System.Drawing.Size(541, 143);
@@ -78,7 +78,7 @@
             // 
             this.outputPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.outputPathLabel.AutoEllipsis = true;
-            this.outputPathLabel.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputPathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputPathLabel.Location = new System.Drawing.Point(222, 235);
             this.outputPathLabel.Name = "outputPathLabel";
             this.outputPathLabel.Size = new System.Drawing.Size(566, 125);
@@ -133,9 +133,11 @@
             // 
             // MergeForm
             // 
+            this.AcceptButton = this.mergeButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.clearInputButton);
             this.Controls.Add(this.clearOutputButton);
