@@ -51,11 +51,13 @@ namespace VkDialogHistoryFileMergerForm
         {
             if (!await ExistsDialogFiles(_inputPath))
             {
-                MessageBox.Show("There are no \'messages\' files in this directory. Change directory and try again.", "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                MessageBox.Show("There are no \'messages\' files in this directory. Change directory and try again.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             MergeFiles(_inputPath, _outputPath);
-            MessageBox.Show("Files merged successfully.");
+            MessageBox.Show("Files merged successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

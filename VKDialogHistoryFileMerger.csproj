@@ -13,6 +13,7 @@
         <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <ApplicationIcon>VKDialogFileMerger.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,11 +47,11 @@
             <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
         </Reference>
         <Reference Include="mscorlib"/>
-        <Reference Include="System" />
+        <Reference Include="System"/>
         <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <HintPath>packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+            <HintPath>packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
         </Reference>
-        <Reference Include="System.ComponentModel.Composition" />
+        <Reference Include="System.ComponentModel.Composition"/>
         <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
           <HintPath>packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
         </Reference>
@@ -136,6 +137,7 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+        <None Include="VKDialogFileMerger.ico"/>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="VKDialogHistoryFileMergerService\VKDialogHistoryFileMergerService.csproj">

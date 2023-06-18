@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeForm));
             this.mergeButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.inputPathLabel = new System.Windows.Forms.Label();
@@ -147,6 +148,7 @@
             this.Controls.Add(this.inputPathLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mergeButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MergeForm";
             this.Text = "VKDialogHistoryFileMerger";
