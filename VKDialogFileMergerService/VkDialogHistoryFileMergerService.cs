@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,9 +9,9 @@ namespace VKDialogHistoryFileMergerService
 {
     public static class VkDialogHistoryFileMergerService
     {
-        public static void MergeFiles(string? outputpath = null) => MergeFiles(".", outputpath);
+        public static string MergeFiles(string? outputpath = null) => MergeFiles(".", outputpath);
 
-        public static void MergeFiles(string path, string? outputpath = null)
+        public static string MergeFiles(string path, string? outputpath = null)
         {
             var htmlFiles = Directory.GetFiles(path, "messages*.html")
                 .Where(file => Regex.IsMatch(file, @"messages\d+\.html"))
@@ -47,7 +46,7 @@ namespace VKDialogHistoryFileMergerService
 
             writer.Append("</div></div></div></body></html>");
             File.WriteAllText(outputFileName, writer.ToString(), Encoding.GetEncoding(1251));
-            Console.WriteLine("Dialog files merged successfully!\nOutput file: " + outputFileName);
+            return "Dialog files merged successfully!\nOutput file: " + outputFileName;
         }
 
         public static Task<bool> ExistsDialogFiles(string path = ".") => Task.FromResult(Directory
