@@ -56,8 +56,7 @@ namespace VkDialogHistoryFileMergerForm
                 return;
             }
 
-            MergeFiles(_inputPath, _outputPath);
-            MessageBox.Show("Files merged successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(MergeFiles(_inputPath, _outputPath), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
