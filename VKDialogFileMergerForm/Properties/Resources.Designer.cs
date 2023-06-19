@@ -45,7 +45,7 @@ namespace VkDialogHistoryFileMergerForm.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("VkDialogHistoryFileMergerForm.Properties.Resources",
+                        new global::System.Resources.ResourceManager("VKDialogFileMergerForm.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

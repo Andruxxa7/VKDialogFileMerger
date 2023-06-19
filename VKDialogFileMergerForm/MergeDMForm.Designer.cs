@@ -46,7 +46,7 @@
             this.mergeButton.Location = new System.Drawing.Point(628, 396);
             this.mergeButton.Name = "mergeButton";
             this.mergeButton.Size = new System.Drawing.Size(160, 42);
-            this.mergeButton.TabIndex = 4;
+            this.mergeButton.TabIndex = 5;
             this.mergeButton.Text = "Merge";
             this.mergeButton.UseVisualStyleBackColor = true;
             this.mergeButton.Click += new System.EventHandler(this.mergeButton_Click);
@@ -58,7 +58,7 @@
             this.exitButton.Location = new System.Drawing.Point(462, 396);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(160, 42);
-            this.exitButton.TabIndex = 5;
+            this.exitButton.TabIndex = 6;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -104,7 +104,7 @@
             this.selectOutputButton.Location = new System.Drawing.Point(12, 226);
             this.selectOutputButton.Name = "selectOutputButton";
             this.selectOutputButton.Size = new System.Drawing.Size(178, 63);
-            this.selectOutputButton.TabIndex = 2;
+            this.selectOutputButton.TabIndex = 3;
             this.selectOutputButton.Text = "Select output folder";
             this.selectOutputButton.UseVisualStyleBackColor = true;
             this.selectOutputButton.Click += new System.EventHandler(this.selectOutputButton_Click);
@@ -116,7 +116,7 @@
             this.clearOutputButton.Location = new System.Drawing.Point(12, 297);
             this.clearOutputButton.Name = "clearOutputButton";
             this.clearOutputButton.Size = new System.Drawing.Size(178, 63);
-            this.clearOutputButton.TabIndex = 3;
+            this.clearOutputButton.TabIndex = 4;
             this.clearOutputButton.Text = "Clear";
             this.clearOutputButton.UseVisualStyleBackColor = true;
             this.clearOutputButton.Click += new System.EventHandler(this.clearOutputButton_Click);
@@ -127,7 +127,7 @@
             this.clearInputButton.Location = new System.Drawing.Point(12, 125);
             this.clearInputButton.Name = "clearInputButton";
             this.clearInputButton.Size = new System.Drawing.Size(178, 63);
-            this.clearInputButton.TabIndex = 6;
+            this.clearInputButton.TabIndex = 2;
             this.clearInputButton.Text = "Clear";
             this.clearInputButton.UseVisualStyleBackColor = true;
             this.clearInputButton.Click += new System.EventHandler(this.clearInputButton_Click);
@@ -151,7 +151,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MergeForm";
-            this.Text = "VKDialogHistoryFileMerger";
+            this.Text = "VKDialogFileMerger";
             this.ResumeLayout(false);
         }
 

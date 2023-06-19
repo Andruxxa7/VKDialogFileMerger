@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogHistoryFileMerger", "VKDialogHistoryFileMerger.csproj", "{3FCB1C68-DB05-4056-8AD3-7EC6471C4A8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogFileMerger", "VKDialogFileMerger.csproj", "{3FCB1C68-DB05-4056-8AD3-7EC6471C4A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogHistoryFileMergerService", "VKDialogHistoryFileMergerService\VKDialogHistoryFileMergerService.csproj", "{99094F86-7FC5-44F3-A910-539C7A6C4711}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogFileMergerService", "VKDialogFileMergerService\VKDialogFileMergerService.csproj", "{99094F86-7FC5-44F3-A910-539C7A6C4711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkDialogHistoryFileMergerForm", "VkDialogHistoryFileMergerForm\VkDialogHistoryFileMergerForm.csproj", "{75CCBF20-7678-427F-AE15-98F9221160B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKDialogFileMergerForm", "VKDialogFileMergerForm\VKDialogFileMergerForm.csproj", "{75CCBF20-7678-427F-AE15-98F9221160B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
