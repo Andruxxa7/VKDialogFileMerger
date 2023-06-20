@@ -5,7 +5,7 @@ namespace VKDialogHistoryFileMerger.Class;
 
 public class Options
 {
-    [Option('i', "path", Required = false, HelpText = "Path to the dialog files directory.")]
+    [Option('i', "inputpath", Required = false, HelpText = "Path to the dialog files directory.")]
     public string Path { get; set; } = ".";
 
     [Option('c', "addCss", Required = false, HelpText = "Add CSS inside the merged file.")]
