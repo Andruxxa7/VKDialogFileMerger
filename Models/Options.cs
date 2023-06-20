@@ -1,7 +1,7 @@
 #nullable enable
 using CommandLine;
 
-namespace VKDialogHistoryFileMerger.Class;
+namespace VKDialogHistoryFileMerger.Models;
 
 public class Options
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 using CommandLine;
-using VKDialogHistoryFileMerger.Class;
+using VKDialogHistoryFileMerger.Models;
 using static VKDialogHistoryFileMergerService.VkDialogHistoryFileMergerService;
 
 namespace VKDialogHistoryFileMerger;
