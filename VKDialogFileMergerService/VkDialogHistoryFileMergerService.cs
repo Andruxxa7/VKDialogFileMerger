@@ -9,9 +9,9 @@ namespace VKDialogHistoryFileMergerService
 {
     public static class VkDialogHistoryFileMergerService
     {
-        public static string MergeFiles(string? outputpath = null) => MergeFiles(".", outputpath);
+        public static string MergeFiles(bool addCss, string? outputpath = null) => MergeFiles(".",addCss, outputpath);
 
-        public static string MergeFiles(string path, string? outputpath = null)
+        public static string MergeFiles(string path, bool addCss, string? outputpath = null)
         {
             var htmlFiles = Directory.GetFiles(path, "messages*.html")
                 .Where(file => Regex.IsMatch(file, @"messages\d+\.html"))
@@ -25,7 +25,7 @@ namespace VKDialogHistoryFileMergerService
                              outputFileName;
             var writer = new StringBuilder();
             writer.Append(
-                $"<!DOCTYPE html><html><head><meta charset=\"windows-1251\"><title>VK</title><link rel=\"shortcut icon\" href=\"../../favicon.ico\"><link rel=\"stylesheet\" type=\"text/css\" href=\"../../style.css\"></head><body><div class=\"wrap\"><div class=\"header\"><div class=\"page_header\"><div class=\"top_home_logo\"></div></div></div><div class=\"page_content page_block\"><div class=\"wrap_page_content\"><div class=\"page_block_header clear_fix\"><div class=\"page_block_header_inner _header_inner\"><div class=\"ui_crumb\">{divNode?.InnerText}</div></div></div>");
+                $"<!DOCTYPE html><html><head><meta charset=\"windows-1251\"><title>VK</title><link rel=\"shortcut icon\" href=\"../../favicon.ico\">{(addCss?Resources.css:Resources.cssLink)}</head><body><div class=\"wrap\"><div class=\"header\"><div class=\"page_header\"><div class=\"top_home_logo\"></div></div></div><div class=\"page_content page_block\"><div class=\"wrap_page_content\"><div class=\"page_block_header clear_fix\"><div class=\"page_block_header_inner _header_inner\"><div class=\"ui_crumb\">{divNode?.InnerText}</div></div></div>");
 
             foreach (var htmlFile in htmlFiles)
             {
