@@ -56,7 +56,7 @@ namespace VkDialogHistoryFileMergerForm
                 return;
             }
 
-            MessageBox.Show(MergeFiles(_inputPath, _outputPath), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(MergeFiles(_inputPath, сssCheckBox.Checked, _outputPath), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

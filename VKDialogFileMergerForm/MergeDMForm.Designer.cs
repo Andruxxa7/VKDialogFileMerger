@@ -38,6 +38,7 @@
             this.selectOutputButton = new System.Windows.Forms.Button();
             this.clearOutputButton = new System.Windows.Forms.Button();
             this.clearInputButton = new System.Windows.Forms.Button();
+            this.сssCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // mergeButton
@@ -58,7 +59,7 @@
             this.exitButton.Location = new System.Drawing.Point(462, 396);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(160, 42);
-            this.exitButton.TabIndex = 6;
+            this.exitButton.TabIndex = 7;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -132,6 +133,16 @@
             this.clearInputButton.UseVisualStyleBackColor = true;
             this.clearInputButton.Click += new System.EventHandler(this.clearInputButton_Click);
             // 
+            // сssCheckBox
+            // 
+            this.сssCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.сssCheckBox.Location = new System.Drawing.Point(628, 363);
+            this.сssCheckBox.Name = "сssCheckBox";
+            this.сssCheckBox.Size = new System.Drawing.Size(160, 27);
+            this.сssCheckBox.TabIndex = 6;
+            this.сssCheckBox.Text = "Add css";
+            this.сssCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MergeForm
             // 
             this.AcceptButton = this.mergeButton;
@@ -140,6 +151,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.сssCheckBox);
             this.Controls.Add(this.clearInputButton);
             this.Controls.Add(this.clearOutputButton);
             this.Controls.Add(this.selectOutputButton);
@@ -154,6 +166,8 @@
             this.Text = "VKDialogFileMerger";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox сssCheckBox;
 
         private System.Windows.Forms.Button clearInputButton;
 

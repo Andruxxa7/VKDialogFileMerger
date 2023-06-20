@@ -7,7 +7,7 @@ namespace VKDialogHistoryFileMerger
     {
         private static void Main()
         {
-            Console.WriteLine("Do you want to add css inside merged file or keep link? Y\\N(or other");
+            Console.WriteLine("Do you want to add css inside merged file or keep link? Y\\N(or other)");
             var addCss = Console.ReadKey().KeyChar == 'Y';
             Console.WriteLine();
             Console.WriteLine(ExistsDialogFiles().Result
