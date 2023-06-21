@@ -5,6 +5,7 @@
     <RootNamespace>VkDialogHistoryFileMergerForm</RootNamespace>
     <LangVersion>latest</LangVersion>
     <ApplicationIcon>VKDialogFileMerger.ico</ApplicationIcon>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>

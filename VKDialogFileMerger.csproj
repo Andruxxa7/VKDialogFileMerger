@@ -5,6 +5,7 @@
     <RootNamespace>VKDialogHistoryFileMerger</RootNamespace>
     <ApplicationIcon>VKDialogFileMerger.ico</ApplicationIcon>
     <LangVersion>latest</LangVersion>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>VKDialogHistoryFileMerger</AssemblyTitle>
     <Product>VKDialogHistoryFileMerger</Product>
