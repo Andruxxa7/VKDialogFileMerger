@@ -1,136 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{3FCB1C68-DB05-4056-8AD3-7EC6471C4A8F}</ProjectGuid>
-        <OutputType>Exe</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>VKDialogHistoryFileMerger</RootNamespace>
-        <AssemblyName>VKDialogFileMerger</AssemblyName>
-        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-        <ApplicationIcon>VKDialogFileMerger.ico</ApplicationIcon>
-        <LangVersion>latest</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="Microsoft.Build.Framework" />
-        <Reference Include="Microsoft.Build.Utilities.v4.0" />
-        <Reference Include="Microsoft.CSharp" />
-        <Reference Include="mscorlib" />
-        <Reference Include="System" />
-        <Reference Include="System.ComponentModel.Composition" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.IO.Compression.FileSystem" />
-        <Reference Include="System.Numerics" />
-        <Reference Include="System.Xml" />
-        <Reference Include="System.Xml.Linq" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Models\Options.cs"/>
-        <Compile Include="Program.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="VKDialogFileMerger.ico" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj">
-        <Project>{99094f86-7fc5-44f3-a910-539c7a6c4711}</Project>
-        <Name>VKDialogFileMergerService</Name>
-      </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="CommandLineParser" Version="2.9.1" />
-      <PackageReference Include="Costura.Fody" Version="5.8.0-alpha0098">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Fody" Version="6.6.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
-      <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-      <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
-      <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
-      <PackageReference Include="NETStandard.Library" Version="1.6.1" />
-      <PackageReference Include="Scriban" Version="5.5.0" />
-      <PackageReference Include="System.AppContext" Version="4.3.0" />
-      <PackageReference Include="System.Collections" Version="4.3.0" />
-      <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
-      <PackageReference Include="System.Console" Version="4.3.0" />
-      <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
-      <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.3.0" />
-      <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
-      <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
-      <PackageReference Include="System.Globalization" Version="4.3.0" />
-      <PackageReference Include="System.Globalization.Calendars" Version="4.3.0" />
-      <PackageReference Include="System.IO" Version="4.3.0" />
-      <PackageReference Include="System.IO.Compression" Version="4.3.0" />
-      <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
-      <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-      <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
-      <PackageReference Include="System.Linq" Version="4.3.0" />
-      <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
-      <PackageReference Include="System.Net.Http" Version="4.3.4" />
-      <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
-      <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
-      <PackageReference Include="System.ObjectModel" Version="4.3.0" />
-      <PackageReference Include="System.Reflection" Version="4.3.0" />
-      <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
-      <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
-      <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
-      <PackageReference Include="System.Runtime" Version="4.3.0" />
-      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.0" />
-      <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
-      <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
-      <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
-      <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
-      <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
-      <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.0" />
-      <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.3.0" />
-      <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
-      <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.0" />
-      <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
-      <PackageReference Include="System.Text.Encoding.Extensions" Version="4.3.0" />
-      <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
-      <PackageReference Include="System.Threading" Version="4.3.0" />
-      <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
-      <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.0" />
-      <PackageReference Include="System.Threading.Timer" Version="4.3.0" />
-      <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
-      <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VKDialogHistoryFileMerger</RootNamespace>
+    <ApplicationIcon>VKDialogFileMerger.ico</ApplicationIcon>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>VKDialogHistoryFileMerger</AssemblyTitle>
+    <Product>VKDialogHistoryFileMerger</Product>
+    <Copyright>Copyright ©  2023</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Costura.Fody" Version="5.8.0-alpha0098">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Fody" Version="6.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="Scriban" Version="5.5.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
+    <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
+    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="6.0.10" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.1" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="VKDialogFileMergerForm\Forms\MergeDMForm.cs" />
+    <Compile Remove="VKDialogFileMergerForm\Forms\MergeDMForm.Designer.cs" />
+    <Compile Remove="VKDialogFileMergerForm\obj\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" />
+    <Compile Remove="VKDialogFileMergerForm\Program.cs" />
+    <Compile Remove="VKDialogFileMergerForm\Properties\AssemblyInfo.cs" />
+    <Compile Remove="VKDialogFileMergerForm\Properties\Resources.Designer.cs" />
+    <Compile Remove="VKDialogFileMergerForm\Properties\Settings.Designer.cs" />
+    <Compile Remove="VKDialogFileMergerService\obj\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" />
+    <Compile Remove="VKDialogFileMergerService\Properties\AssemblyInfo.cs" />
+    <Compile Remove="VKDialogFileMergerService\Resources.cs" />
+    <Compile Remove="VKDialogFileMergerService\Services\VkDialogHistoryFileMergerService.cs" />
+  </ItemGroup>
 </Project>
