@@ -31,7 +31,7 @@ public static class VkDialogHistoryFileMergerService
         foreach (var htmlFile in htmlFiles)
         {
             var document = new HtmlDocument();
-            document.Load(htmlFile);
+            document.Load(htmlFile, Encoding.GetEncoding(1251));
 
             var itemNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'item')]");
             if (itemNodes == null) continue;

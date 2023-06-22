@@ -7,7 +7,7 @@
     <option name="USE_EXTERNAL_CONSOLE" value="0" />
     <option name="USE_MONO" value="0" />
     <option name="RUNTIME_ARGUMENTS" value="" />
-    <option name="RUNTIME_TYPE" value="netfw" />
+    <option name="RUNTIME_TYPE" value="coreclr" />
     <option name="PROJECT_PATH" value="$PROJECT_DIR$/VKDialogFileMerger.csproj" />
     <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
     <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -15,8 +15,6 @@
     <option name="PROJECT_KIND" value="DotNetCore" />
     <option name="PROJECT_TFM" value="net6.0" />
     <method v="2">
-      <option name="CleanProject" default="false" projectName="VKDialogFileMergerService" projectPath="file://$PROJECT_DIR$/VKDialogFileMergerService/VKDialogFileMergerService.csproj" />
-      <option name="Build" default="false" projectName="VKDialogFileMergerService" projectPath="file://$PROJECT_DIR$/VKDialogFileMergerService/VKDialogFileMergerService.csproj" />
       <option name="CleanProject" default="false" projectName="VKDialogFileMerger" projectPath="file://$PROJECT_DIR$/VKDialogFileMerger.csproj" />
       <option name="Build" default="false" projectName="VKDialogFileMerger" projectPath="file://$PROJECT_DIR$/VKDialogFileMerger.csproj" />
     </method>
