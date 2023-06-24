@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish" type="CompoundRunConfigurationType">
+    <toRun name="CLI publish" type="DotNetFolderPublish" />
+    <toRun name="Form version" type="DotNetFolderPublish" />
+    <method v="2" />
+  </configuration>
+</component>
