@@ -16,7 +16,7 @@ internal static class Program
                 {
                     Console.WriteLine(
                         "Do you want to add CSS inside the merged file or keep the link? Y\\N (or other)");
-                    options.AddCss = Console.ReadKey().KeyChar == 'Y';
+                    options.AddCss = Console.ReadKey().KeyChar is 'Y' or 'y' ;
                     Console.WriteLine();
                 }
 

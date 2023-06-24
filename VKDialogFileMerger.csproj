@@ -14,10 +14,6 @@
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Build.Utilities.v4.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj" />
   </ItemGroup>
   <ItemGroup>
