@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -19,6 +20,7 @@ public static class VkDialogHistoryFileMergerService
             .ToArray();
         var outputFileName = "MergedDialog.html";
         var doc = new HtmlDocument();
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         doc.LoadHtml(File.ReadAllText(htmlFiles[0], Encoding.GetEncoding(1251)));
         var divNode = doc.DocumentNode.SelectSingleNode("//div[@class='ui_crumb']");
         outputFileName = (outputpath is null ? string.Empty : $"{outputpath}\\") + divNode?.InnerText + outputFileName;
@@ -29,7 +31,7 @@ public static class VkDialogHistoryFileMergerService
         foreach (var htmlFile in htmlFiles)
         {
             var document = new HtmlDocument();
-            document.Load(htmlFile);
+            document.Load(htmlFile, Encoding.GetEncoding(1251));
 
             var itemNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'item')]");
             if (itemNodes == null) continue;
