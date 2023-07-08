@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-publish:
     name: Build and Publish
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -21,12 +21,15 @@ jobs:
 
       - name: Build and Publish CLI Linux
         run: dotnet publish -c Release -r linux-x64 --self-contained true --output ./bin/Release/net6.0/linux-x64/publish
+        working-directory: VKDialogFileMerger
 
       - name: Build and Publish CLI Windows
         run: dotnet publish -c Release -r win-x86 --self-contained true --output ./bin/Release/net6.0/win-x86/publish
+        working-directory: VKDialogFileMerger
 
       - name: Build and Publish Forms Windows
-        run: dotnet publish -c Release -r win-x64 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish
+        run: dotnet publish -c Release -r win-x86 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x86/publish
+        working-directory: VKDialogFileMergerForm
 
       - name: Create Release
         uses: actions/create-release@v1
