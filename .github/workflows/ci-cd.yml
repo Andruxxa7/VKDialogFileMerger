@@ -25,9 +25,6 @@ jobs:
       - name: Build and Publish CLI Windows
         run: dotnet publish -c Release -r win-x86 --self-contained true --output ./bin/Release/net6.0/win-x86/publish
 
-      - name: Build and Publish Forms Windows
-        run: dotnet publish -c Release -r win-x86 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x86/publish
-
       - name: Create Release
         uses: actions/create-release@v1
         env:
