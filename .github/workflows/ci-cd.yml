@@ -21,13 +21,13 @@ jobs:
 
       - name: Build and Publish VKDialogFileMergerForm (Windows Forms)
         if: startsWith(github.ref, 'refs/tags/')
-        run: dotnet publish VKDialogFileMergerForm/VKDialogFileMergerForm.csproj -c Release -r win-x64 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish
+        run: dotnet publish ./VKDialogFileMergerForm/VKDialogFileMergerForm.csproj -c Release -r win-x64 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish
 
       - name: Build and Publish VKDialogFileMerger (CLI Windows)
-        run: dotnet publish /VKDialogFileMerger.csproj -c Release -r win-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/win-x64/publish
+        run: dotnet publish ./VKDialogFileMerger.csproj -c Release -r win-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/win-x64/publish
 
       - name: Build and Publish VKDialogFileMerger (CLI Linux)
-        run: dotnet publish /VKDialogFileMerger.csproj -c Release -r linux-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
+        run: dotnet publish ./VKDialogFileMerger.csproj -c Release -r linux-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
 
       - name: Create Release
         uses: actions/create-release@v1
