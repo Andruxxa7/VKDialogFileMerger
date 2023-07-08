@@ -19,17 +19,15 @@ jobs:
         with:
           dotnet-version: 6.0.100
 
-      - name: Build and Publish CLI Linux
-        run: dotnet publish -c Release -r linux-x64 --self-contained true --output ./bin/Release/net6.0/linux-x64/publish
-        working-directory: VKDialogFileMerger
+      - name: Build and Publish VKDialogFileMergerForm (Windows Forms)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: dotnet publish VKDialogFileMergerForm/VKDialogFileMergerForm.csproj -c Release -r win-x64 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish
 
-      - name: Build and Publish CLI Windows
-        run: dotnet publish -c Release -r win-x86 --self-contained true --output ./bin/Release/net6.0/win-x86/publish
-        working-directory: VKDialogFileMerger
+      - name: Build and Publish VKDialogFileMerger (CLI Windows)
+        run: dotnet publish VKDialogFileMerger/VKDialogFileMerger.csproj -c Release -r win-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/win-x64/publish
 
-      - name: Build and Publish Forms Windows
-        run: dotnet publish -c Release -r win-x86 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x86/publish
-        working-directory: VKDialogFileMergerForm
+      - name: Build and Publish VKDialogFileMerger (CLI Linux)
+        run: dotnet publish VKDialogFileMerger/VKDialogFileMerger.csproj -c Release -r linux-x64 --output ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
 
       - name: Create Release
         uses: actions/create-release@v1
