@@ -9,7 +9,7 @@ public class Options
     public string Path { get; set; } = ".";
 
     [Option('c', "addCss", Required = false, HelpText = "Add CSS inside the merged file.")]
-    public bool AddCss { get; set; } = false;
+    public bool AddCss { get; set; }
 
     [Option('o', "outputpath", Required = false, HelpText = "Output path for the merged file.")]
     public string? OutputPath { get; set; } = null;
