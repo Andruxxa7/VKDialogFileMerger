@@ -1,0 +1,39 @@
+name: CI/CD
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x' # Replace with the desired .NET version
+
+      - name: Build and Publish CLI Linux
+        run: dotnet publish -c Release -r linux-x64 --self-contained true --output ./bin/Release/net6.0/linux-x64/publish
+
+      - name: Build and Publish CLI Windows
+        run: dotnet publish -c Release -r win-x86 --self-contained true --output ./bin/Release/net6.0/win-x86/publish
+
+      - name: Build and Publish Forms Windows
+        run: dotnet publish -c Release -r win-x86 --output ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x86/publish
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
