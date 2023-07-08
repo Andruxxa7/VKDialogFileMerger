@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-publish:
     name: Build and Publish
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -17,7 +17,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x' # Replace with the desired .NET version
+          dotnet-version: 6.0.100
 
       - name: Build and Publish CLI Linux
         run: dotnet publish -c Release -r linux-x64 --self-contained true --output ./bin/Release/net6.0/linux-x64/publish
