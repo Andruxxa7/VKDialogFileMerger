@@ -16,15 +16,15 @@ The CLI version of VKDialogFileMerger is a command-line tool that supports multi
 
 ### Example Usage (Windows):
 
-
+```
 VKDialogFileMerger.exe -i "C:\Path\To\Dialogue\Files" -c -o "C:\Path\To\Output\File.txt"
-
+```
 
 ### Example Usage (Linux):
 
-
+```
 ./VKDialogFileMerger -i "/path/to/dialogue/files" -c -o "/path/to/output/file.txt"
-
+```
 
 ## GUI (Windows only)
 
