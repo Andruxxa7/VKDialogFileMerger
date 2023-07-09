@@ -56,7 +56,7 @@ public partial class MergeForm : Form
             return;
         }
 
-        MessageBox.Show(MergeFiles(_inputPath, сssCheckBox.Checked, _outputPath), "Success", MessageBoxButtons.OK,
+        MessageBox.Show(await MergeFiles(_inputPath, сssCheckBox.Checked, _outputPath), "Success", MessageBoxButtons.OK,
             MessageBoxIcon.Information);
     }
 }
