@@ -21,7 +21,7 @@ public static class VkDialogHistoryFileMergerService
         var outputFileName = "MergedDialog.html";
         var doc = new HtmlDocument();
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-        doc.LoadHtml(File.ReadAllText(htmlFiles[0], Encoding.GetEncoding(1251)));
+        doc.LoadHtml(await File.ReadAllTextAsync(htmlFiles[0], Encoding.GetEncoding(1251)));
         var divNode = doc.DocumentNode.SelectSingleNode("//div[@class='ui_crumb']");
         outputFileName = Path.Combine(outputpath ?? string.Empty, divNode?.InnerText + outputFileName);
         var writer = new StringBuilder();

@@ -26,6 +26,15 @@ VKDialogFileMerger.exe -i "C:\Path\To\Dialogue\Files" -c -o "C:\Path\To\Output\F
 ./VKDialogFileMerger -i "/path/to/dialogue/files" -c -o "/path/to/output/file.txt"
 ```
 
+### Example Usage with Opening via exe:
+
+1. Move the executable file `VKDialogFileMerger.exe` to the folder containing the dialogue files.
+2. Run the `VKDialogFileMerger.exe` file.
+3. In the dialog window that appears, choose one of the following options:
+    - Press `Y` to apply CSS styles to the merged file.
+    - Press `N` (or any other key) to decline embedding CSS styles in the merged file.
+4. After successfully merging the dialogue, you will see a message in the console with the name of the resulting file.
+
 ## GUI (Windows only)
 
 The GUI version of VKDialogFileMerger is a Windows-only application that provides a graphical user interface for selecting input and output paths.
