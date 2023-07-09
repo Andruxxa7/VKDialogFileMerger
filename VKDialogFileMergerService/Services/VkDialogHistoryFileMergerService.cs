@@ -34,10 +34,8 @@ public static class VkDialogHistoryFileMergerService
 
             var itemNodes = document.DocumentNode.SelectNodes("//div[contains(@class, 'item')]");
             if (itemNodes == null) continue;
-            foreach (var itemNode in itemNodes)
+            foreach (var messageContent in itemNodes.DistinctBy(item => Regex.Replace(item.InnerText, @"[\n\r\s]+", "")).Select(itemNode => itemNode.OuterHtml))
             {
-                var messageContent = itemNode.OuterHtml;
-                if (writer.ToString().Contains(messageContent)) continue;
                 writer.Append(messageContent);
             }
         }
