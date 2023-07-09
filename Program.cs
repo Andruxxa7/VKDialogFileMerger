@@ -26,6 +26,6 @@ internal static class Program
 
         Console.WriteLine(await ExistsDialogFiles(options.Path)
             ? await MergeFiles(options.Path, options.AddCss, options.OutputPath)
-            : "There are no files. Move the script to the dialog directory and try again.");
+            : "There are no files. Move the script to the dialog directory and try again. Or input another path in params. ");
     }
 }
