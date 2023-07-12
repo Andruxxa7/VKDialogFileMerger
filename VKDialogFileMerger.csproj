@@ -10,9 +10,10 @@
     <AssemblyTitle>VKDialogHistoryFileMerger</AssemblyTitle>
     <Product>VKDialogHistoryFileMerger</Product>
     <Copyright>Copyright ©  2023</Copyright>
-    <AssemblyVersion>1.0</AssemblyVersion>
-    <FileVersion>1.0</FileVersion>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerAutoIncrement>patch</MinVerAutoIncrement>
+    <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj" />
@@ -20,6 +21,10 @@
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="MinVer" Version="4.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Scriban" Version="5.5.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
     <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
