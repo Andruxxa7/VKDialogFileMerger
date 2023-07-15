@@ -14,7 +14,7 @@ public static class VkDialogHistoryFileMergerService
 
     public static async Task<string> MergeFiles(string path, bool addCss, string? outputpath = null)
     {
-        var htmlFiles = Directory.GetFiles(path, "messages*.html")
+        var htmlFiles = Directory.EnumerateFiles(path, "messages*.html")
             .Where(file => Regex.IsMatch(file, @"messages\d+\.html"))
             .OrderBy(file => int.Parse(Regex.Match(file, @"messages(\d+)\.html").Groups[1].Value))
             .ToArray();
@@ -59,7 +59,7 @@ public static class VkDialogHistoryFileMergerService
     {
         try
         {
-            return Task.FromResult(Directory.GetFiles(path, "messages*.html").Any(file => Regex.IsMatch(file, @"messages\d+\.html")));
+            return Task.FromResult(Directory.EnumerateFiles(path, "messages*.html").Any(file => Regex.IsMatch(file, @"messages\d+\.html")));
         }
         catch (DirectoryNotFoundException)
         {
