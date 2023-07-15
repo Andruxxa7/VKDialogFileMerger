@@ -25,7 +25,7 @@ public static class VkDialogHistoryFileMergerService
         var divNode = doc.DocumentNode.SelectSingleNode("//div[@class='ui_crumb']");
         outputFileName = Path.Combine(outputpath ?? string.Empty, divNode?.InnerText + outputFileName);
         var writer = new StringBuilder();
-        writer.Append(
+        writer.AppendLine(
             $"<!DOCTYPE html><html><head><meta charset=\"windows-1251\"><title>VK</title><link rel=\"shortcut icon\" href=\"../../favicon.ico\">{(addCss ? Resources.css : Resources.cssLink)}</head><body><div class=\"wrap\"><div class=\"header\"><div class=\"page_header\"><div class=\"top_home_logo\"></div></div></div><div class=\"page_content page_block\"><div class=\"wrap_page_content\"><div class=\"page_block_header clear_fix\"><div class=\"page_block_header_inner _header_inner\"><div class=\"ui_crumb\">{divNode?.InnerText}</div></div></div>");
 
         foreach (var htmlFile in htmlFiles)
@@ -38,11 +38,11 @@ public static class VkDialogHistoryFileMergerService
             foreach (var messageContent in itemNodes.DistinctBy(item => Regex.Replace(item.InnerText, @"[\n\r\s]+", ""))
                          .Select(itemNode => itemNode.OuterHtml))
             {
-                writer.Append(messageContent);
+                writer.AppendLine(messageContent);
             }
         }
 
-        writer.Append("</div></div></div></body></html>");
+        writer.AppendLine("</div></div></div></body></html>");
         try
         {
             await File.WriteAllTextAsync(outputFileName, writer.ToString(), Encoding.GetEncoding(1251));
