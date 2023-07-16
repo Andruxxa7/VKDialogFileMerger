@@ -45,6 +45,13 @@ jobs:
           dotnet publish ./VKDialogFileMerger.csproj -c Release -r linux-x64 -p:PublishSingleFile=true --self-contained false --output ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
           cd ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
           7z a -r VKDialogFileMerger-Linux.zip .
+          
+      - name: Generate Release Notes
+        run: |
+          current_tag=${GITHUB_REF#refs/tags/}
+          previous_tag=$(git describe --tags --abbrev=0 $current_tag^)
+          release_notes=$(git log $previous_tag..$current_tag --pretty=format:'- %s')
+          echo "release_notes=$release_notes" >> $GITHUB_ENV
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v1
@@ -53,3 +60,4 @@ jobs:
             VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish/VKDialogFileMergerForm.zip
             VKDialogFileMerger/bin/Release/net6.0/win-x64/publish/VKDialogFileMerger-Windows.zip
             VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish/VKDialogFileMerger-Linux.zip
+          body: ${{ env.release_notes }}
