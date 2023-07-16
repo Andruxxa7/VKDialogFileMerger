@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v3
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3.2.0
@@ -46,44 +46,10 @@ jobs:
           cd ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish
           7z a -r VKDialogFileMerger-Linux.zip .
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
-      - name: Upload VKDialogFileMergerForm (Windows Forms) Release Asset
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish/VKDialogFileMergerForm.zip
-          asset_name: VKDialogFileMergerForm.zip
-          asset_content_type: application/zip
-
-      - name: Upload VKDialogFileMerger (CLI Windows) Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./VKDialogFileMerger/bin/Release/net6.0/win-x64/publish/VKDialogFileMerger-Windows.zip
-          asset_name: VKDialogFileMerger-Windows.zip
-          asset_content_type: application/zip
-
-      - name: Upload VKDialogFileMerger (CLI Linux) Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish/VKDialogFileMerger-Linux.zip
-          asset_name: VKDialogFileMerger-Linux.zip
-          asset_content_type: application/zip
+          files: |
+            VKDialogFileMergerForm/bin/Release/net6.0-windows/win-x64/publish/VKDialogFileMergerForm.zip
+            VKDialogFileMerger/bin/Release/net6.0/win-x64/publish/VKDialogFileMerger-Windows.zip
+            VKDialogFileMerger/bin/Release/net6.0/linux-x64/publish/VKDialogFileMerger-Linux.zip
