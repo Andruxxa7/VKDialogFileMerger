@@ -1,6 +1,6 @@
 # VKDialogFileMerger
 
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.ru-ru.md)
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.md) [![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.ru-ru.md)
 
 VKDialogFileMerger is an application that allows you to merge dialogue files extracted from VKontakte (VK) archives into a single dialogue file. The messages in VK dialogue files are split into separate files, with each file containing 50 messages. VKDialogFileMerger simplifies the process of combining these files into a unified dialogue file.
 

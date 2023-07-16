@@ -1,7 +1,7 @@
 
 # VKDialogFileMerger
 
-[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.md)
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.md) [![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/Andruxxa7/VKDialogFileMerger/blob/main/README.ru-ru.md)
 
 VKDialogFileMerger - приложение, которое позволяет объединять файлы диалогов, извлеченные из архивов VK, в единый файл диалога. Сообщения в файлах диалогов VK разделены на отдельные файлы, каждый из которых содержит 50 сообщений. VKDialogFileMerger упрощает процесс объединения этих файлов в один файл диалога.
 
