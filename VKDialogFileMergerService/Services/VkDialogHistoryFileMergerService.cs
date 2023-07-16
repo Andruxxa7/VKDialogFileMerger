@@ -9,8 +9,8 @@ namespace VKDialogHistoryFileMergerService;
 
 public static class VkDialogHistoryFileMergerService
 {
-    private static string _fileSearchPattern = "messages*.html";
-    private static Regex _fileNameRegex = new(@"messages(\d+)\.html");
+    private const string _fileSearchPattern = "messages*.html";
+    private static readonly Regex _fileNameRegex = new(@"messages(\d+)\.html");
 
     public static async Task<string> MergeFiles(bool addCss, string? outputpath = null) =>
         await MergeFiles(".", addCss, outputpath);
