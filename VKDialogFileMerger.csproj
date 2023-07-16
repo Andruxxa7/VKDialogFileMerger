@@ -10,17 +10,11 @@
     <AssemblyTitle>VKDialogHistoryFileMerger</AssemblyTitle>
     <Product>VKDialogHistoryFileMerger</Product>
     <Copyright>Copyright ©  2023</Copyright>
-    <AssemblyVersion>1.0</AssemblyVersion>
-    <FileVersion>1.0</FileVersion>
-    <EnableWindowsTargeting>true</EnableWindowsTargeting>
-    <BuildVersioningWithGitHub>true</BuildVersioningWithGitHub>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" Condition="!Exists('packages.config')" />
     <PackageReference Include="Scriban" Version="5.5.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
     <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
@@ -29,10 +23,6 @@
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="6.0.10" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.1" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
-    <PackageReference Include="TurnerSoftware.BuildVersioning" Version="0.4.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="VKDialogFileMergerForm\Forms\MergeDMForm.cs" />
@@ -46,5 +36,24 @@
     <Compile Remove="VKDialogFileMergerService\Properties\AssemblyInfo.cs" />
     <Compile Remove="VKDialogFileMergerService\Resources.cs" />
     <Compile Remove="VKDialogFileMergerService\Services\VkDialogHistoryFileMergerService.cs" />
+    <Compile Remove="VKDialogFileMergerForm\**" />
+    <Compile Remove="VKDialogFileMergerService\**" />
+    <Compile Remove="packages\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="VKDialogFileMergerForm\**" />
+    <EmbeddedResource Remove="VKDialogFileMergerService\**" />
+    <EmbeddedResource Remove="packages\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="VKDialogFileMergerForm\**" />
+    <None Remove="VKDialogFileMergerService\**" />
+    <None Remove="packages\**" />
+    <None Remove="VKDialogFileMerger.ico" />
+    <None Remove="VKDialogFileMerger.png" />
+    <None Remove="VKDialogFileMerger.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="VKDialogFileMergerService\VKDialogFileMergerService.csproj" />
   </ItemGroup>
 </Project>

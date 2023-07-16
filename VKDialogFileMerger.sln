@@ -1,6 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VKDialogFileMerger", "VKDialogFileMerger.csproj", "{3FCB1C68-DB05-4056-8AD3-7EC6471C4A8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{99094F86-7FC5-44F3-A910-539C7A6C4711} = {99094F86-7FC5-44F3-A910-539C7A6C4711}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VKDialogFileMergerService", "VKDialogFileMergerService\VKDialogFileMergerService.csproj", "{99094F86-7FC5-44F3-A910-539C7A6C4711}"
 EndProject

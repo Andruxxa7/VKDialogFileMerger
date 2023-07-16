@@ -10,17 +10,11 @@
     <AssemblyTitle>VKDialogFileMergerService</AssemblyTitle>
     <Product>VKDialogFileMergerService</Product>
     <Copyright>Copyright ©  2023</Copyright>
-    <AssemblyVersion>1.0</AssemblyVersion>
-    <FileVersion>1.0</FileVersion>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
-    <BuildVersioningWithGitHub>true</BuildVersioningWithGitHub>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" Condition="!Exists('packages.config')" />
     <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
-    <PackageReference Include="TurnerSoftware.BuildVersioning" Version="0.4.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>
