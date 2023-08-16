@@ -41,6 +41,10 @@ The GUI version of VKDialogFileMerger is a Windows-only application that provide
 
 To use the GUI version, simply run the executable, and a file dialog will appear allowing you to choose the input directory and specify the output file path. If no input or output paths are selected, the application will default to the directory where the executable is located.
 
+## Questions or Feedback? 🤔
+
+If you have any questions or want to provide feedback, you can reach out to me in the [wh0o7 heaven chat](https://t.me/+D-T_xElzA003Nzcy). Let's make the project even better together! 🎵🎉
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
